@@ -1,0 +1,259 @@
+#include <WiFi.h>
+#include <HTTPClient.h>
+
+// Sustituir con datos de vuestra red
+
+//const char* ssid     = "software";
+//const char* password = "Software22";
+
+
+const char* ssid     = "MEGARED 4";
+const char* password = "Estudiantes2019";
+
+float temp,hume;
+//DHT11
+#include <DHT.h>
+#define DHTPIN 23
+#define DHTTYPE DHT11 
+DHT dht(DHTPIN, DHTTYPE); 
+
+//Sensor Ultrasonico
+#define trigPin 33  // trigger pin
+#define echoPin 32    // echo pin
+
+
+//Sensor humedad suelo
+const int Sensorpin  = 35;
+int sensorValue = 1;
+
+String user = "ioticos";
+String pass = "12345";
+unsigned long lastTime = 0;
+// Timer set to 10 minutes (600000)
+//unsigned long timerDelay = 600000;
+// Set timer to 5 seconds (5000)
+unsigned long timerDelay = 5000;
+
+
+
+//sensor Temperatura de agua
+#include <OneWire.h>                
+#include <DallasTemperature.h>
+ 
+OneWire ourWire(15);
+DallasTemperature sensors(&ourWire);
+//Fotoresistencia
+#define sensorpa 34
+
+#include <LiquidCrystal.h>
+LiquidCrystal lcd(13, 12, 14, 27, 26, 25);
+
+void setup() {
+ 
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+   
+
+   Serial.begin(115200);
+   sensors.begin();
+  dht.begin();
+  lcd.begin(16, 2);
+  
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, password);
+  Serial.print("Conectando a:\t");
+  Serial.println(ssid); 
+  
+  // Esperar a que nos conectemos
+  while (WiFi.status() != WL_CONNECTED) 
+  {
+    delay(200);
+   Serial.print('.');
+  }
+  // Mostrar mensaje de exito y dirección IP asignada
+  Serial.println();
+  Serial.print("Conectado a:\t");
+  Serial.println(WiFi.SSID()); 
+  Serial.print("IP address:\t");
+  Serial.println(WiFi.localIP());
+}
+
+void loop() {
+  
+ 
+  float fotoresis =  fotoresistencia();
+  float temph2 = sensorpalito();
+  temperaturadht11();
+  double distancia = medirdistancia();
+  float senshume = sensorhumedad();
+
+
+  
+  /*
+     Serial.print("fotoresistencia");
+  Serial.println(fotoresis);
+  Serial.print("Temepratua aua");
+  Serial.println(temph2);
+  Serial.print("distancia");
+  Serial.println(distancia);
+   Serial.print("Huemdad tierra");
+  Serial.println(senshume);
+   Serial.print("temperatura ambinete");
+  Serial.println(temp);
+  Serial.print("humedad ambinete");
+  Serial.println(hume);
+ delay(10000); 
+
+
+
+
+ 
+  lcd.setCursor(0,0);
+  lcd.print("Foto resistecia");
+  lcd.setCursor(0,1);
+  lcd.print(fotoresis);
+  
+  delay(3000); 
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Tmp agua");
+  lcd.setCursor(0,1);
+  lcd.print(temph2);
+
+  delay(3000); 
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("distancia");
+  lcd.setCursor(0,1);
+  lcd.print(distancia);
+
+  delay(3000); 
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Hum tierra");
+  lcd.setCursor(0,1);
+  lcd.print(senshume);
+
+
+
+  delay(3000); 
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Temp ambiente");
+  lcd.setCursor(0,1);
+  lcd.print(temp);
+   
+   
+   
+  delay(3000); 
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Hum dht11");
+  lcd.setCursor(0,1);
+  lcd.print(hume);
+  delay(3000);
+*/
+
+  /*
+  if(fotoresis > 600){
+     
+    if(senshume >= 4095){
+    
+      if(distancia < 19){
+        
+        if(temph2 < 30){
+
+          lcd.setCursor(0,0);
+          lcd.print("Se regara la plantica");
+          
+        }else{
+           lcd.setCursor(0,0);
+          lcd.print("La temperatura del agua es muy alta");
+        }
+      }else{
+         lcd.setCursor(0,0);
+        lcd.print("no hay agua");
+      }
+    }
+  }
+
+
+  */
+
+/*
+
+   //casa karla red 3  String sendStr="https://192.168.1.65/inde.php?";
+   String sendStr="https://192.168.1.65/inde.php?";
+    //String datas = "user="+user+"&pass="+pass;
+    String datas = "dhthume="+String(hume)+"&dhttem="+String(temp)+"&humetenedor="+String(senshume)+"&temph2o="+String(temph2);
+
+    
+    HTTPClient http;
+    
+    http.begin(sendStr);
+    
+    //int Get = http.GET();
+
+    http.addHeader("Content-Type", "application/x-www-form-urlencoded"); //Preparamos el header text/plain si solo vamos a enviar texto plano sin un paradigma llave:valor.
+
+    int code = http.POST(datas);   //Enviamos el post pasándole, los datos que queremos enviar. (esta función nos devuelve un código que guardamos en un int)
+
+    if(code>0){
+      Serial.println("Código HTTP ► " + String(code));   //Print return code
+
+      if(code == 200){
+        String cuerpo_respuesta = http.getString();
+        Serial.println("El servidor respondió ▼ ");
+        Serial.println(cuerpo_respuesta);
+      }
+
+    }else{
+
+     Serial.print("Error enviando POST, código: ");
+     Serial.println(code);
+
+    }
+
+    http.end();  //libero recursos
+
+
+*/
+
+    
+  lcd.clear();
+}
+
+float fotoresistencia(){
+  float lectura = analogRead(sensorpa);
+  return lectura;
+}
+
+
+void temperaturadht11(){  
+  hume = dht.readHumidity();  
+  temp = dht.readTemperature();
+}
+
+float sensorhumedad(){
+  //Serial.println("------------Sensor humedad garrita");
+  sensorValue = analogRead(Sensorpin);
+  return sensorValue; 
+}
+
+
+
+double medirdistancia(){  
+  double duration, distance;
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(1000);
+  digitalWrite(trigPin, LOW);
+  duration = pulseIn(echoPin, HIGH);
+  distance = (duration/2)/29.1;    
+   return distance;
+}
+
+float sensorpalito(){  
+  sensors.requestTemperatures();
+  float temp= sensors.getTempCByIndex(0); //Se obtiene la temperatura en ºC
+  return temp;
+}
