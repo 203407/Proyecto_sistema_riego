@@ -1,0 +1,399 @@
+body {
+  background-color: #262324;
+}
+
+
+.log_out_link{
+  color: white;
+  border-radius: 2px;
+  text-decoration: none;
+  padding: 2px;
+  font-size: 19px;
+  margin-right: 3em;
+}
+a:hover{
+  color: yellow;
+}
+
+.log_out_link:hover{
+  background:rgb(122, 122, 122);
+}
+
+.ard{
+  position: relative;
+  background-image: url(https://images.pexels.com/photos/2288849/pexels-photo-2288849.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  height: 608px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.cd{
+
+  
+      box-shadow:  5px 5px 5px black;
+      border-bottom-color: black;
+      border-right-color: black; 
+      border-width: 2px;
+      background-color: #2894EF;
+
+}
+.lol{
+  font-size: 8em;
+  color: white;
+  text-shadow: 2px 10px black;
+  text-align: center;
+  margin-top: 0;
+  position: absolute;
+  top: 26.5%;
+  left: 25%;  
+}
+label{
+  font-size:1.7em ;
+}
+
+.imagenri{
+}
+
+.nvs{
+  z-index: 10;
+}
+
+
+.dhhume{
+  /* background-color: rgb(218, 252, 173); */
+  margin-top: 3.7em;
+  margin-left: 3em;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 700;
+  background-color: #262324;
+  color: #ffffff;
+  font-size: 24px;
+  text-transform: capitalize;
+}
+
+
+
+.dhtem{
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 700;
+  background-color: #262324;
+  color: #ffffff;
+  font-size: 24px;
+  text-transform: capitalize;
+  margin-left: 7em;
+}
+
+.temh{
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 700;
+  background-color: #262324;
+  color: #ffffff;
+  font-size: 24px;
+  text-transform: capitalize;
+  margin-top: 3em;
+  margin-left: 3em;
+}
+
+.temt{
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 700;
+  background-color: #262324;
+  color: #ffffff;
+  font-size: 24px;
+  text-transform: capitalize;
+  margin-left: 5em;
+  
+}
+
+.dat{
+  margin-left: 5em;
+  margin-top: 0.8em;
+  font-size: 3em;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 4px 4px rgb(41, 41, 41);
+}
+
+.cd2{
+  box-shadow:  5px 5px 20px 6px black;
+  border-bottom-color: black;
+  border-right-color: black; 
+  border-width: 2px;
+  
+  background-color: #2894EF;
+
+}
+
+
+th{
+  font-size: 10px;
+  padding:3px ;
+
+}
+
+th, td {
+  border-bottom: 1px solid #999;
+  background-color: #262324;
+  color: #fff;
+}
+
+
+.mc{
+  position: absolute;
+  left: 2.1em;
+  top: 2.4em; 
+}
+
+.limInHume{
+  position: absolute;
+  left: 6em;
+  top: 2.4em; 
+}
+
+.limSuHume{
+  position: absolute;
+  left: 10em;
+  top: 2.4em;  
+}
+.frecH{
+  position: absolute;
+  left: 15em;
+  top: 2.4em; 
+}
+
+.frecAco{
+  position: absolute;
+  left: 20em;
+  top: 2.4em; 
+}
+.frecCom{
+  position: absolute;
+  left: 25em;
+  top: 2.4em; 
+}
+.limInHumeAxac{
+  position: absolute;
+  left: 30em;
+  top: 2.4em; 
+}
+
+.limSuHumeAxac{
+  position: absolute;
+  left: 35em;
+  top: 2.4em; 
+}
+
+.titleT{
+  position: absolute;
+  top:10px;
+  left: 15%;
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 4px 4px rgb(41, 41, 41);
+}
+
+.titleT2{
+  position: absolute;
+  top:17em;
+  left: 15%;
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 4px 4px rgb(41, 41, 41);
+}
+
+
+
+.tabl{   
+  border-radius: 10px;
+  background-color: rgb(62, 62, 62);
+  color: #fff;
+  position: absolute;
+  top: 5em;
+  left: 16em;
+  padding:10px ;
+}
+
+.tabl2{
+
+  border-radius: 10px;
+  background-color: rgb(62, 62, 62);
+  color: #fff;
+  position: absolute;
+  top: 47em;
+  left: 16em;
+  padding:10px ;
+}
+
+
+.dataS{
+
+  position: absolute;
+  top: 20em;
+  left: 40em;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #262324;
+
+}
+
+
+.dataS2{
+  position: absolute;
+  top: 62em; 
+  left: 40em;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #262324;
+}
+
+.dataS3{
+  position: absolute;
+  top: 90em; 
+  left: 33em;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #262324;
+  width: 30em;
+}
+
+
+h5{
+    background-color: #262324;
+    padding: 3px;
+    border-radius: 5px;
+    border-bottom: 1px solid;
+    font-size: 16px;
+    color: #fff;
+}
+
+.diagram{
+  width: 300px;
+  height: 300px;
+   background-color: #fff;
+  border-radius: 20px;
+  position: absolute;
+  top: 20em;
+  left: 10em;
+}
+
+
+.diagram2{  
+  width: 300px;
+  height: 300px;
+   background-color: #fff;
+  border-radius: 20px;
+  position: absolute;
+  top: 62em; 
+  left: 10em;
+}
+
+.tabl3{
+
+  background-color: rgb(62, 62, 62);
+  color: #fff;
+  padding:10px ;
+  border: solid;
+  border-color: rgb(255, 254, 254);  
+  border-radius: 10px;    
+}
+
+
+.dcl{
+  overflow: auto;
+	overflow-y: auto;
+  height:30em;
+  width:45em;
+  position: absolute;
+  top: 2em;
+  left: 7em;
+  border-radius: 10px;
+}
+
+
+
+.ths{
+
+  background-color: #262324;
+  color: #fff;
+  font-size: 20px;
+
+}
+
+.trtb{
+  text-align: center;
+}
+
+.cd2{
+
+  box-shadow:  5px 5px 5px black;
+  border-bottom-color: black;
+  border-right-color: black; 
+  border-width: 2px;
+  background-color: #2894EF;
+
+}
+
+
+.titleT3{
+  position: absolute;
+  top:34em;
+  left: 9em;
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 4px 4px rgb(41, 41, 41);
+}
+
+
+.dcl2{
+  overflow: auto;
+	overflow-y: auto;
+  height:20em;
+  width:10.3em;
+  position: absolute;
+  top: 90em;
+  left: 15em;
+  border-radius: 10px;
+}
+
+.tabl4{
+  background-color: rgb(62, 62, 62);
+  color: #fff;
+  padding:10px ;
+  border: solid;
+  border-color: rgb(255, 254, 254);  
+  border-radius: 10px;    
+}
+
+
+.god{
+  position: absolute;
+  top: 115em;
+  width: 30em;
+  left: 3em;
+  height: auto;
+  border-radius: 30px;
+}
+
+
+.testada{
+  position: absolute;
+  top: 94em;
+  right: 2em;
+  border: solid;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #262324;
+  color: white;
+  font-size: 20px;  
+} 
